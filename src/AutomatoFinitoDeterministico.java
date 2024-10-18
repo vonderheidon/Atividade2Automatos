@@ -26,8 +26,14 @@ public class AutomatoFinitoDeterministico {
     }
 
     public void definirTransicoes(Estado estadoOrigem, Character simbolo, Estado estadoDestino) {
+        if (!this.funcaoDeTransicao.containsKey(estadoOrigem)) {
+            System.out.println("Erro: Estado de origem não encontrado - " + estadoOrigem.getNome());
+            return;
+        }
+
         this.funcaoDeTransicao.get(estadoOrigem).put(simbolo, estadoDestino);
     }
+
 
     public void verificarCadeia(String cadeia) {
         Estado estadoAtual = estadoInicial;
@@ -60,4 +66,5 @@ public class AutomatoFinitoDeterministico {
             verificarCadeia(cadeia);
         }
     }
+
 }

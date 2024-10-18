@@ -7,19 +7,19 @@ public class Q4 {
 
     private static AutomatoFinitoDeterministico criarAutomato() {
         Estado q0 = new Estado("q0");
-        Estado qErro = new Estado("qErro");
+        Estado q1 = new Estado("q1");
 
-        Set<Estado> estados = new HashSet<>(Arrays.asList(q0, qErro));
+        Set<Estado> estados = new HashSet<>(Arrays.asList(q0, q1));
         Set<Estado> estadosFinais = new HashSet<>(Collections.singletonList(q0));
 
         Set<Character> alfabeto = new HashSet<>(Arrays.asList('0', '1'));
 
         AutomatoFinitoDeterministico afd = new AutomatoFinitoDeterministico(estados, alfabeto, q0, estadosFinais, true);
 
-        afd.definirTransicoes(q0, '0', qErro);
-        afd.definirTransicoes(q0, '1', qErro);
-        afd.definirTransicoes(qErro, '0', qErro);
-        afd.definirTransicoes(qErro, '1', qErro);
+        afd.definirTransicoes(q0, '0', q1);
+        afd.definirTransicoes(q0, '1', q1);
+        afd.definirTransicoes(q1, '0', q1);
+        afd.definirTransicoes(q1, '1', q1);
 
         return afd;
     }
@@ -28,5 +28,13 @@ public class Q4 {
         AutomatoFinitoDeterministico afd = criarAutomato();
         afd.exibirResultado("");
         afd.exibirResultado("1");
+        afd.exibirResultado("10");
+        afd.exibirResultado("0");
+        afd.exibirResultado("a");
     }
+
+    public static void main(String[] args) {
+        executar();
+    }
+
 }

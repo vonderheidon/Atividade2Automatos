@@ -28,4 +28,9 @@ public class Q5 {
         afd.exibirResultado("010");
         afd.exibirResultado("02");
     }
+
+    public static void main(String[] args) {
+        executar();
+    }
+
 }

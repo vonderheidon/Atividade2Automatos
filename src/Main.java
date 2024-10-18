@@ -1,8 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        //Questão 1
-        System.out.println("Questão 1");
-        Q1.executar();
+        //Questão 1_1
+        System.out.println("Questão 1_1");
+        Q1_1.executar();
+
+        //Questão 1_2
+        System.out.println("\nQuestão 1_2");
+        Q1_2.executar();
 
         //Questão 2
         System.out.println("\nQuestão 2");

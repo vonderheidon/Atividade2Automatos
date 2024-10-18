@@ -5,29 +5,29 @@ import java.util.Set;
 public class Q9 {
 
     private static AutomatoFinitoDeterministico criarAutomato() {
-        Estado qIgual = new Estado("qIgual");
-        Estado qMais0_1 = new Estado("qMais0_1");
-        Estado qMais0_2 = new Estado("qMais0_2");
-        Estado qMais1_1 = new Estado("qMais1_1");
-        Estado qErro = new Estado("qErro");
+        Estado q0 = new Estado("q0");
+        Estado q1 = new Estado("q1");
+        Estado q2 = new Estado("q2");
+        Estado q3 = new Estado("q3");
+        Estado q4 = new Estado("q4");
 
-        Set<Estado> estados = new HashSet<>(Arrays.asList(qIgual, qMais0_1, qMais0_2, qMais1_1, qErro));
-        Set<Estado> estadosFinais = new HashSet<>(Arrays.asList(qMais0_1, qMais0_2));
+        Set<Estado> estados = new HashSet<>(Arrays.asList(q0, q1, q2, q3, q4));
+        Set<Estado> estadosFinais = new HashSet<>(Arrays.asList(q1, q2));
 
         Set<Character> alfabeto = new HashSet<>(Arrays.asList('0', '1'));
 
-        AutomatoFinitoDeterministico afd = new AutomatoFinitoDeterministico(estados, alfabeto, qIgual, estadosFinais, false);
+        AutomatoFinitoDeterministico afd = new AutomatoFinitoDeterministico(estados, alfabeto, q0, estadosFinais, false);
 
-        afd.definirTransicoes(qIgual, '0', qMais0_1);
-        afd.definirTransicoes(qIgual, '1', qMais1_1);
-        afd.definirTransicoes(qMais0_1, '0', qMais0_2);
-        afd.definirTransicoes(qMais0_1, '1', qIgual);
-        afd.definirTransicoes(qMais0_2, '0', qMais0_2);
-        afd.definirTransicoes(qMais0_2, '1', qMais0_1);
-        afd.definirTransicoes(qMais1_1, '0', qIgual);
-        afd.definirTransicoes(qMais1_1, '1', qErro);
-        afd.definirTransicoes(qErro, '0', qErro);
-        afd.definirTransicoes(qErro, '1', qErro);
+        afd.definirTransicoes(q0, '0', q1);
+        afd.definirTransicoes(q0, '1', q3);
+        afd.definirTransicoes(q1, '0', q2);
+        afd.definirTransicoes(q1, '1', q0);
+        afd.definirTransicoes(q2, '0', q2);
+        afd.definirTransicoes(q2, '1', q1);
+        afd.definirTransicoes(q3, '0', q0);
+        afd.definirTransicoes(q3, '1', q4);
+        afd.definirTransicoes(q4, '0', q4);
+        afd.definirTransicoes(q4, '1', q4);
 
         return afd;
     }
@@ -44,4 +44,9 @@ public class Q9 {
         afd9.exibirResultado("110");
         afd9.exibirResultado("0101");
     }
+
+    public static void main(String[] args) {
+        executar();
+    }
+
 }

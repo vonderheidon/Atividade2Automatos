@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class Q1 {
+public class Q1_1 {
 
     private static AutomatoFinitoDeterministico criarAutomato() {
         Estado q0 = new Estado("q0");
@@ -29,4 +29,9 @@ public class Q1 {
         afd.exibirResultado("1");
         afd.exibirResultado("0");
     }
+
+    public static void main(String[] args) {
+        executar();
+    }
+
 }

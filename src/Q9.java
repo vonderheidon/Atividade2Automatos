@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Q9 {
 
-    private static AutomatoFinitoDeterministico criarAutomato() {
+    private static AFD criarAutomato() {
         Estado q0 = new Estado("q0");
         Estado q1 = new Estado("q1");
         Estado q2 = new Estado("q2");
@@ -16,7 +16,7 @@ public class Q9 {
 
         Set<Character> alfabeto = new HashSet<>(Arrays.asList('0', '1'));
 
-        AutomatoFinitoDeterministico afd = new AutomatoFinitoDeterministico(estados, alfabeto, q0, estadosFinais, false);
+        AFD afd = new AFD(estados, alfabeto, q0, estadosFinais, false);
 
         afd.definirTransicoes(q0, '0', q1);
         afd.definirTransicoes(q0, '1', q3);
@@ -33,7 +33,7 @@ public class Q9 {
     }
 
     public static void executar() {
-        AutomatoFinitoDeterministico afd9 = criarAutomato();
+        AFD afd9 = criarAutomato();
         afd9.exibirResultado("00");
         afd9.exibirResultado("01");
         afd9.exibirResultado("10");

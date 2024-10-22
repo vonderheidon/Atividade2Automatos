@@ -39,5 +39,9 @@ public class Main {
         // Questão 9
         System.out.println("\nQuestão 9");
         Q9.executar();
+
+        // Questão 10
+        System.out.println("\nQuestão 10");
+        Q10.executar();
     }
 }

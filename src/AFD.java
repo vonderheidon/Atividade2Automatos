@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class AutomatoFinitoDeterministico {
+public class AFD {
 
     private Set<Estado> estados;
     private Set<Character> alfabeto;
@@ -12,7 +12,7 @@ public class AutomatoFinitoDeterministico {
     private boolean aceitaCadeiaVazia;
 
 
-    public AutomatoFinitoDeterministico(Set<Estado> estados, Set<Character> alfabeto, Estado estadoInicial, Set<Estado> estadosFinais, boolean aceitaCadeiaVazia) {
+    public AFD(Set<Estado> estados, Set<Character> alfabeto, Estado estadoInicial, Set<Estado> estadosFinais, boolean aceitaCadeiaVazia) {
         this.estados = estados;
         this.alfabeto = alfabeto;
         this.estadoInicial = estadoInicial;
